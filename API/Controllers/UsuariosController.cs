@@ -29,39 +29,6 @@ public class UsuariosController : BaseApiController
         return Ok(result);
     }
 
-/*     [HttpPost]
-    [Route("Validar")]
-    public  IActionResult Validar([FromBody] LoginDto request)
-    {
-
-        if (_userService.UserLogin(request) != null)
-        {
-            var keyBytes = Encoding.ASCII.GetBytes(secretKey);
-            var claims = new ClaimsIdentity();
-            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.Username));
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = claims,
-                Expires = DateTime.UtcNow.AddMinutes(60),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(keyBytes), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var tokenConfig = tokenHandler.CreateToken(tokenDescriptor);
-
-            string tokencreado = tokenHandler.WriteToken(tokenConfig);
-
-            return StatusCode(StatusCodes.Status200OK, new { token = tokencreado });
-
-        }
-        else
-        {
-
-            return StatusCode(StatusCodes.Status401Unauthorized, new { token = "" });
-        }
-    } */
-
     [HttpPost("addrole")]
     public async Task<IActionResult> AddRoleAsync(AddRoleDto model)
     {

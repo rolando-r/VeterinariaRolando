@@ -10,5 +10,15 @@ namespace Infrastructure.Repository
         public MascotaRepository(BaseContext context) : base(context)
         {
         }
+
+        public Task<dynamic> GetMascotasFelinas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<dynamic> GetMascotasVacunacionPrimerTrimestre2023()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

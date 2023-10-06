@@ -10,5 +10,15 @@ namespace Infrastructure.Repository
         public MedicamentoRepository(BaseContext context) : base(context)
         {
         }
+
+        public Task<dynamic> GetMedicamentos5000()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<dynamic> GetMedicamentosLaboratorioGenfar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

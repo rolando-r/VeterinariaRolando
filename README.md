@@ -21,18 +21,18 @@ The main objective of the software development project is the creation of an adm
             }
     //Controller..
       [HttpGet("GetVeterinariosCirujanosVascular")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<ActionResult<IEnumerable<VeterinarioDto>>> GetVeterinariosCirujanosVascular()
-    {
-        IEnumerable<Veterinario> Veterinarios = await _unitOfWork.Veterinarios.GetVeterinariosCirujanosVascular();
-        IEnumerable<ProveedorDto>  veterinariosDto = _mapper.Map<IEnumerable<ProveedorDto>>(Veterinarios);
-        return Ok(veterinariosDto);
-    }
+      public async Task<ActionResult<IEnumerable<VeterinarioDto>>> GetVeterinariosCirujanosVascular()
+      {
+          IEnumerable<Veterinario> Veterinarios = await _unitOfWork.Veterinarios.GetVeterinariosCirujanosVascular();
+          IEnumerable<ProveedorDto>  veterinariosDto = _mapper.Map<IEnumerable<ProveedorDto>>(Veterinarios);
+          return Ok(veterinariosDto);
+      }
     //Interface..
-      Task<dynamic> GetVeterinariosCirujanosVascular();
+        Task<dynamic> GetVeterinariosCirujanosVascular();
   ```
   ### Listar los medicamentos que pertenezcan a el laboratorio Genfar.
 
@@ -46,15 +46,15 @@ The main objective of the software development project is the creation of an adm
         }
     //Controller..
       [HttpGet("GetMedicamentosLaboratorioGenfar")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentosLaboratorioGenfar()
-    {
-        IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentosLaboratorioGenfar();
-        IEnumerable<MedicamentoDto>  medicamentosDto = (IEnumerable<MedicamentoDto>)_mapper.Map<IEnumerable<ProveedorDto>>(Medicamentos);
-        return Ok(medicamentosDto);
-    }
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentosLaboratorioGenfar()
+      {
+          IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentosLaboratorioGenfar();
+          IEnumerable<MedicamentoDto>  medicamentosDto = (IEnumerable<MedicamentoDto>)_mapper.Map<IEnumerable<ProveedorDto>>(Medicamentos);
+          return Ok(medicamentosDto);
+      }
     //Interface..
       Task<dynamic> GetMedicamentosLaboratorioGenfar();
   ```
@@ -70,16 +70,16 @@ The main objective of the software development project is the creation of an adm
         }
     //Controller..
       [HttpGet("GetMascotasFelinas")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasFelinas()
-    {
-        IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasFelinas();
-        IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
-        return Ok(mascotasDto);
-    }
+      public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasFelinas()
+      {
+          IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasFelinas();
+          IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
+          return Ok(mascotasDto);
+      }
     //Interface..
       Task<dynamic> GetMascotasFelinas();
   ```
@@ -95,18 +95,18 @@ The main objective of the software development project is the creation of an adm
             }
     //Controller..
       [HttpGet("GetPropietariosYMascotas")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<ActionResult<IEnumerable<PropietarioxMascotaDto>>> GetPropietariosYMascotas()
-    {
-        IEnumerable<Mascota> Propietarios = await _unitOfWork.Propietarios.GetPropietariosYMascotas();
-        IEnumerable<PropietarioxMascotaDto>  mascotasDto = _mapper.Map<IEnumerable<PropietarioxMascotaDto>>(Propietarios);
-        return Ok(mascotasDto);
-    }
+      public async Task<ActionResult<IEnumerable<PropietarioxMascotaDto>>> GetPropietariosYMascotas()
+      {
+          IEnumerable<Mascota> Propietarios = await _unitOfWork.Propietarios.GetPropietariosYMascotas();
+          IEnumerable<PropietarioxMascotaDto>  mascotasDto = _mapper.Map<IEnumerable<PropietarioxMascotaDto>>(Propietarios);
+          return Ok(mascotasDto);
+      }
     //Interface..
-      Task<dynamic> GetPropietariosYMascotas();
+        Task<dynamic> GetPropietariosYMascotas();
   ```
   ### Listar los medicamentos que tenga un precio de venta mayor a 50000
 
@@ -120,15 +120,15 @@ The main objective of the software development project is the creation of an adm
         }
     //Controller..
       [HttpGet("GetMedicamentos5000")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentos5000()
-    {
-        IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentos5000();
-        IEnumerable<MedicamentoDto>  medicamentosDto = (IEnumerable<MedicamentoDto>)_mapper.Map<IEnumerable<ProveedorDto>>(Medicamentos);
-        return Ok(medicamentosDto);
-    }
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentos5000()
+      {
+          IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentos5000();
+          IEnumerable<MedicamentoDto>  medicamentosDto = (IEnumerable<MedicamentoDto>)_mapper.Map<IEnumerable<ProveedorDto>>(Medicamentos);
+          return Ok(medicamentosDto);
+      }
     //Interface..
       Task<dynamic> GetMedicamentos5000();
   ```
@@ -144,16 +144,16 @@ The main objective of the software development project is the creation of an adm
         }
     //Controller..
       [HttpGet("GetMascotasVacunacionPrimerTrimestre2023")]
-    //[Authorize(Roles="")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      //[Authorize(Roles="")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasVacunacionPrimerTrimestre2023()
-    {
-        IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasVacunacionPrimerTrimestre2023();
-        IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
-        return Ok(mascotasDto);
-    }
+      public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasVacunacionPrimerTrimestre2023()
+      {
+          IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasVacunacionPrimerTrimestre2023();
+          IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
+          return Ok(mascotasDto);
+      }
     //Interface..
       Task<dynamic> GetMascotasVacunacionPrimerTrimestre2023();
   ```
@@ -162,6 +162,13 @@ The main objective of the software development project is the creation of an adm
 In some controllers the authorization was commented.
   ```csharp
   [Authorize(Roles = "Administrador")]
+  ```
+
+Modified User:
+  ```csharp
+  public string Username { get; set; }
+  public string Email { get; set; }
+  public string Password { get; set; }
   ```
 
 ## 📂 Folder Structure

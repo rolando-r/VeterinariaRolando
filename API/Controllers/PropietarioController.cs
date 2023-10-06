@@ -67,6 +67,17 @@ public class PropietarioController : BaseApiController
         propietarioDto.Id = propietario.Id;
         return CreatedAtAction(nameof(Post),new {id= propietarioDto.Id}, propietarioDto);
     }
+    [HttpGet("GetPropietariosYMascotas")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+    public async Task<ActionResult<IEnumerable<PropietarioxMascotaDto>>> GetPropietariosYMascotas()
+    {
+        IEnumerable<Mascota> Propietarios = await _unitOfWork.Propietarios.GetPropietariosYMascotas();
+        IEnumerable<PropietarioxMascotaDto>  mascotasDto = _mapper.Map<IEnumerable<PropietarioxMascotaDto>>(Propietarios);
+        return Ok(mascotasDto);
+    }
     [HttpPut]
    // [Authorize(Roles="")]
     [ProducesResponseType(StatusCodes.Status200OK)]

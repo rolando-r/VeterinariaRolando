@@ -53,6 +53,17 @@ public class VeterinarioController : BaseApiController
         }
         return _mapper.Map<VeterinarioDto>(veterinario);
     }
+    [HttpGet("GetVeterinariosCirujanosVascular")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+    public async Task<ActionResult<IEnumerable<VeterinarioDto>>> GetVeterinariosCirujanosVascular()
+    {
+        IEnumerable<Veterinario> Veterinarios = await _unitOfWork.Veterinarios.GetVeterinariosCirujanosVascular();
+        IEnumerable<ProveedorDto>  veterinariosDto = _mapper.Map<IEnumerable<ProveedorDto>>(Veterinarios);
+        return Ok(veterinariosDto);
+    }
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

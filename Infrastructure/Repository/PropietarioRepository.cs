@@ -10,5 +10,10 @@ namespace Infrastructure.Repository
         public PropietarioRepository(BaseContext context) : base(context)
         {
         }
+
+        public Task<dynamic> GetPropietariosYMascotas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

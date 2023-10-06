@@ -53,6 +53,29 @@ public class MascotaController : BaseApiController
         }
         return _mapper.Map<MascotaDto>(mascota);
     }
+
+    [HttpGet("GetMascotasFelinas")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+    public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasFelinas()
+    {
+        IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasFelinas();
+        IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
+        return Ok(mascotasDto);
+    }
+    [HttpGet("GetMascotasVacunacionPrimerTrimestre2023")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+    public async Task<ActionResult<IEnumerable<MascotaDto>>> GetMascotasVacunacionPrimerTrimestre2023()
+    {
+        IEnumerable<Mascota> Mascotas = await _unitOfWork.Mascotas.GetMascotasVacunacionPrimerTrimestre2023();
+        IEnumerable<MascotaDto>  mascotasDto = _mapper.Map<IEnumerable<MascotaDto>>(Mascotas);
+        return Ok(mascotasDto);
+    }
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

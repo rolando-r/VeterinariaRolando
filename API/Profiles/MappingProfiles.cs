@@ -11,6 +11,7 @@ public class MappingProfiles :Profile
 {
     public MappingProfiles()
     {
+        //CreateMap<Propietario,PropietarioxMascotaDto>.ReverseMap();
         CreateMap<Cita,CitaDto>().ReverseMap();
         CreateMap<DetalleMovimiento,DetalleMovimientoDto>().ReverseMap();
         CreateMap<Especie,EspecieDto>().ReverseMap();

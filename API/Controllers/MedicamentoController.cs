@@ -67,6 +67,26 @@ public class MedicamentoController : BaseApiController
         medicamentoDto.Id = medicamento.Id;
         return CreatedAtAction(nameof(Post),new {id= medicamentoDto.Id}, medicamentoDto);
     }
+    [HttpGet("GetMedicamentosLaboratorioGenfar")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentosLaboratorioGenfar()
+    {
+        IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentosLaboratorioGenfar();
+        IEnumerable<MedicamentoDto>  medicamentosDto = _mapper.Map<IEnumerable<MedicamentoDto>>(Medicamentos);
+        return Ok(medicamentosDto);
+    }
+    [HttpGet("GetMedicamentos5000")]
+    //[Authorize(Roles="")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<MedicamentoDto>>> GetMedicamentos5000()
+    {
+        IEnumerable<Medicamento> Medicamentos = await _unitOfWork.Medicamentos.GetMedicamentos5000();
+        IEnumerable<MedicamentoDto>  medicamentosDto = _mapper.Map<IEnumerable<MedicamentoDto>>(Medicamentos);
+        return Ok(medicamentosDto);
+    }
     [HttpPut]
    // [Authorize(Roles="")]
     [ProducesResponseType(StatusCodes.Status200OK)]

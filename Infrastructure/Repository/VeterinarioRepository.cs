@@ -10,5 +10,10 @@ namespace Infrastructure.Repository
         public VeterinarioRepository(BaseContext context) : base(context)
         {
         }
+
+        public Task<dynamic> GetVeterinariosCirujanosVascular()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
