@@ -15,10 +15,14 @@ The main objective of the software development project is the creation of an adm
 
   ```csharp
     //Repository..
-      public Task<dynamic> GetVeterinariosCirujanosVascular()
-            {
-                throw new NotImplementedException();
-            }
+      public async Task<List<Veterinario>> GetVeterinariosCirujanosVascular()
+        {
+            string veterinarioEspecialidad = "Cirujano Vascular";
+
+            return await _context.Veterinarios
+                .Where(veterinario => veterinario.Especialidad == veterinarioEspecialidad)
+                .ToListAsync();
+        }
     //Controller..
       [HttpGet("GetVeterinariosCirujanosVascular")]
       //[Authorize(Roles="")]
