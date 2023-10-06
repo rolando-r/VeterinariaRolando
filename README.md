@@ -23,6 +23,7 @@ The main objective of the software development project is the creation of an adm
                 .Where(veterinario => veterinario.Especialidad == veterinarioEspecialidad)
                 .ToListAsync();
         }
+        
     //Controller..
       [HttpGet("GetVeterinariosCirujanosVascular")]
       //[Authorize(Roles="")]
