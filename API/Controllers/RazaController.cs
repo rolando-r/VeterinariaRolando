@@ -27,7 +27,7 @@ public class RazaController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<RazaDto>>> Get()
     {
-        var razas = await _unitOfWork.Razas.GetAll();
+        var razas = await _unitOfWork.Razas.GetAllAsync();
         return _mapper.Map<List<RazaDto>>(razas);
     }
     [HttpGet("Pager")]

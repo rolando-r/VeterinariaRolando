@@ -27,7 +27,7 @@ public class EspecieController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<EspecieDto>>> Get()
     {
-        var especies = await _unitOfWork.Especies.GetAll();
+        var especies = await _unitOfWork.Especies.GetAllAsync();
         return _mapper.Map<List<EspecieDto>>(especies);
     }
     [HttpGet("Pager")]

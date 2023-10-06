@@ -5,7 +5,7 @@ namespace Core.Interfaces;
 public interface IGenericRepository<T> where T : class
 {
     Task<T> GetById(int id);
-    Task<IEnumerable<T>> GetAll();
+    Task<IEnumerable<T>> GetAllAsync();
     IEnumerable<T> Find(Expression<Func<T,bool>> expression);
     Task<(int totalRegistros,IEnumerable<T> registros)> GetAllAsync(int pageIndex, int pageSize, string search);
     void  Add(T entity);

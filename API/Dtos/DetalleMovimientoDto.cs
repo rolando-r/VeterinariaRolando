@@ -6,5 +6,4 @@ public class DetalleMovimientoDto
     public int Cantidad { get; set; }
     public int IdMovMedicamento { get; set;}
     public int Precio { get; set; }
-
 }

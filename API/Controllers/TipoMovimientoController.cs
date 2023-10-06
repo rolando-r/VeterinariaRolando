@@ -27,7 +27,7 @@ public class TipoMovimientoController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<TipoMovimientoDto>>> Get()
     {
-        var tipomovimientos = await _unitOfWork.TipoMovimientos.GetAll();
+        var tipomovimientos = await _unitOfWork.TipoMovimientos.GetAllAsync();
         return _mapper.Map<List<TipoMovimientoDto>>(tipomovimientos);
     }
     [HttpGet("Pager")]

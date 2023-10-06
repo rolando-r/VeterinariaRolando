@@ -27,7 +27,7 @@ public class PropietarioController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<PropietarioDto>>> Get()
     {
-        var propietarios = await _unitOfWork.Propietarios.GetAll();
+        var propietarios = await _unitOfWork.Propietarios.GetAllAsync();
         return _mapper.Map<List<PropietarioDto>>(propietarios);
     }
     [HttpGet("Pager")]

@@ -28,7 +28,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return _context.Set<T>().Where(expression).ToList();
     }
 
-    public virtual async Task<IEnumerable<T>> GetAll()
+    public virtual async Task<IEnumerable<T>> GetAllAsync()
     {
         return await _context.Set<T>().ToListAsync();
     }

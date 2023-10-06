@@ -27,7 +27,7 @@ public class MascotaController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<MascotaDto>>> Get()
     {
-        var mascotas = await _unitOfWork.Mascotas.GetAll();
+        var mascotas = await _unitOfWork.Mascotas.GetAllAsync();
         return _mapper.Map<List<MascotaDto>>(mascotas);
     }
     [HttpGet("Pager")]

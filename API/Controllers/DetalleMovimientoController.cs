@@ -27,7 +27,7 @@ public class DetalleMovimientoController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<DetalleMovimientoDto>>> Get()
     {
-        var detallemovimientos = await _unitOfWork.DetalleMovimientos.GetAll();
+        var detallemovimientos = await _unitOfWork.DetalleMovimientos.GetAllAsync();
         return _mapper.Map<List<DetalleMovimientoDto>>(detallemovimientos);
     }
     [HttpGet("Pager")]

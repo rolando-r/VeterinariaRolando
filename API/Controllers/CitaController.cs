@@ -1,7 +1,6 @@
 using API.Dtos;
 using API.Helpers;
 using AutoMapper;
-using Core;
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -28,7 +27,7 @@ public class CitaController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<CitaDto>>> Get()
     {
-        var citas = await _unitOfWork.Citas.GetAll();
+        var citas = await _unitOfWork.Citas.GetAllAsync();
         return _mapper.Map<List<CitaDto>>(citas);
     }
     [HttpGet("Pager")]

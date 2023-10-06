@@ -20,7 +20,10 @@ namespace Infrastructure.UnitOfWork
         private ITipoMovimientoRepository _tipomovimientos;
         private ITratamientoMedicoRepository _tratamientomedicos;
         private IVeterinarioRepository _veterinarios;
-        
+        public UnitOfWork(BaseContext _context)
+        {
+            context = _context;
+        }
 
         public IRolRepository Roles
         {

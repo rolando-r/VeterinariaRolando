@@ -2,6 +2,7 @@ using Core;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
@@ -11,9 +12,14 @@ namespace Infrastructure.Repository
         {
         }
 
-        public Task<dynamic> GetVeterinariosCirujanosVascular()
+        public async Task<List<Veterinario>> GetVeterinariosCirujanosVascular()
         {
-            throw new NotImplementedException();
+            string veterinarioEspecialidad = "Cirujano Vascular";
+
+            return await _context.Veterinarios
+                .Where(veterinario => veterinario.Especialidad == veterinarioEspecialidad)
+                .ToListAsync();
         }
+
     }
 }

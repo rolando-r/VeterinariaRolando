@@ -27,7 +27,7 @@ public class ProveedorController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<ProveedorDto>>> Get()
     {
-        var provedoors = await _unitOfWork.Proveedors.GetAll();
+        var provedoors = await _unitOfWork.Proveedors.GetAllAsync();
         return _mapper.Map<List<ProveedorDto>>(provedoors);
     }
     [HttpGet("Pager")]

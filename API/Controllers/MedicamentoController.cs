@@ -27,7 +27,7 @@ public class MedicamentoController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async  Task<ActionResult<IEnumerable<MedicamentoDto>>> Get()
     {
-        var medicamento = await _unitOfWork.Medicamentos.GetAll();
+        var medicamento = await _unitOfWork.Medicamentos.GetAllAsync();
         return _mapper.Map<List<MedicamentoDto>>(medicamento);
     }
     [HttpGet("Pager")]
